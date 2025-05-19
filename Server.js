@@ -87,11 +87,8 @@ app.post("/login", upload.none(), async (request, res) => {
         res.json({ status: "failure", msg: "User does not exist." })
     }
 
-})
+});
 
-app.get("*",(req,res)=>{
-    res.sendFile("./client/build/index.html");
-})
 
 app.listen(7036, () => {
     console.log("Listening to port 7036 ");
