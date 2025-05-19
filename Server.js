@@ -27,9 +27,7 @@ app.use(express.urlencoded());
 app.use('/profilePics', express.static('profilePics'));
 app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(__dirname, "client" , "build", "index.html"));
-})
+
 
 
 app.post("/signup", upload.single("profilePic"), async (request, res) => {
@@ -89,6 +87,10 @@ app.post("/login", upload.none(), async (request, res) => {
         res.json({ status: "failure", msg: "User does not exist." })
     }
 
+})
+
+app.get("*",(req,res)=>{
+    res.sendFile("./client/build/index.html");
 })
 
 app.listen(7036, () => {
