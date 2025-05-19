@@ -14,69 +14,6 @@ function Signup() {
 
     
 
-
-    // let onSignup = async ()=>{
-     
-    //     let dataToSendJSO = {
-    //         firstName:firstNameInputRef.current.value,
-    //         lastName:lastNameInputRef.current.value,
-    //         age:ageInputRef.current.value,
-    //         email:emailInputRef.current.value,
-    //         password:passwordInputRef.current.value,
-    //         mobileNo:mobileNoInputRef.current.value,
-    //         profilePic:profilePicInputRef.current.value,
-    //     };
-
-    //     let dataToSendJSON = JSON.stringify(dataToSendJSO);
-         
-    //     let myHeaders = new Headers();
-    //     myHeaders.append("content-type","application/json");
-    //     let reqOptions = {
-    //         method:"POST",
-    //         headers:myHeaders,
-    //         body:dataToSendJSON,
-    //     }
-
-    //     let JSONData = await fetch("http://localhost:7036/signup",reqOptions);
-    //     let JSOData = await JSONData.json();
-
-    //     console.log(JSOData);
-
-    //     // console.log(dataToSendJSO);
-    //     // console.log(dataToSendJSON);
-
-    // };
-
-
-    // let onSignupURLEncoded = async ()=>{
-      
-    //     let dataToSendURLE = new URLSearchParams();
-    //     dataToSendURLE.append("firstName",firstNameInputRef.current.value);
-    //     dataToSendURLE.append("lastName",lastNameInputRef.current.value);
-    //     dataToSendURLE.append("age",ageInputRef.current.value);
-    //     dataToSendURLE.append("email",emailInputRef.current.value);
-    //     dataToSendURLE.append("passwaord",passwordInputRef.current.value);
-    //     dataToSendURLE.append("mobileNo",mobileNoInputRef.current.value);
-    //     dataToSendURLE.append("profilePic",profilePicInputRef.current.value);
-
-    //     let myHeaders = new Headers();
-    //     myHeaders.append("content-type","application/x-www-form-urlencoded");
-
-    //     let reqOptions = {
-    //         method:"POST",
-    //         headers:myHeaders,
-    //         body:dataToSendURLE,
-    //     }
-
-
-        
-    //     let JSONData = await fetch("http://localhost:7036/signup",reqOptions);
-    //     let JSOData = await JSONData.json();
-
-    //     alert(JSOData.msg);
-    // }
-
-
     
     let onSignupFormData = async ()=>{
       
@@ -103,7 +40,7 @@ function Signup() {
 
 
         
-        let JSONData = await fetch("http://localhost:7036/signup",reqOptions);
+        let JSONData = await fetch("/signup",reqOptions);
         let JSOData = await JSONData.json();
 
         alert(JSOData.msg);

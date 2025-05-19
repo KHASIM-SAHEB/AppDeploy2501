@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
+const path = require("path");
 
 const storage = multer.diskStorage({
     destination: (request, file, cb) => {
@@ -23,7 +24,12 @@ app.use(express.json());
 
 app.use(express.urlencoded());
 
-app.use('/profilePics', express.static('profilePics'))
+app.use('/profilePics', express.static('profilePics'));
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*",(req,res)=>{
+    res.sendFile("./client/build/index.html");
+})
 
 
 app.post("/signup", upload.single("profilePic"), async (request, res) => {
